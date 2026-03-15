@@ -46,6 +46,7 @@ use Webkul\BagistoApi\State\CheckoutProcessor;
 use Webkul\BagistoApi\State\CountryStateCollectionProvider;
 use Webkul\BagistoApi\State\CountryStateQueryProvider;
 use Webkul\BagistoApi\State\CustomerAddressProvider;
+use Webkul\BagistoApi\State\CustomerOrdersProvider;
 use Webkul\BagistoApi\State\CustomerAddressTokenProcessor;
 use Webkul\BagistoApi\State\CustomerProcessor;
 use Webkul\BagistoApi\State\CustomerProfileProcessor;
@@ -197,6 +198,7 @@ class BagistoApiServiceProvider extends ServiceProvider
         $this->app->tag(CountryStateCollectionProvider::class, ProviderInterface::class);
         $this->app->tag(CountryStateQueryProvider::class, ProviderInterface::class);
         $this->app->tag(CategoryTreeProvider::class, ProviderInterface::class);
+        $this->app->tag(CustomerOrdersProvider::class, ProviderInterface::class);
 
         $this->app->singleton(GetCheckoutAddressCollectionProvider::class, function ($app) {
             return new GetCheckoutAddressCollectionProvider(
